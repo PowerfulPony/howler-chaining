@@ -1,0 +1,39 @@
+{
+  "name": "howler-chaining",
+  "version": "0.0.1",
+  "author": "Victor Zakharenko <victor@pony.ninja>",
+  "license": "MIT",
+  "keywords": [
+    "howler",
+    "howler.js",
+    "audio",
+    "sound",
+    "chaining"
+  ],
+  "description": "Chaining API for calling Howler instances",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:PowerfulPony/howler-chaining.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PowerfulPony/howler-chaining/issues"
+  },
+  "homepage": "https://github.com/PowerfulPony/howler-chaining/issues#readme",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint ./src --ext .js"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-sonarjs": "^0.5.0"
+  },
+  "dependencies": {
+    "howler": "2.x"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
