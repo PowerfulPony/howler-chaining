@@ -55,7 +55,7 @@ listProxy.forEach((method) => {
   HowlChain.prototype[method] = proxy;
 });
 
-HowlChain.prototype.play = function play() {
+HowlChain.prototype.play = function play(force) {
   const id = this.id;
   if (typeof id === 'undefined') {
     this.id = this.howl.play.call(this.howl, this.key);
@@ -66,10 +66,10 @@ HowlChain.prototype.play = function play() {
     this.stop();
   }
 
-  if (this.howl.play.call(this.howl, id) === null) {
+  if (force || this.howl.play.call(this.howl, id) === null) {
     this.id = this.howl.play.call(this.howl, this.key);
-  } 
-  
+  }
+
   return this;
 };
 
