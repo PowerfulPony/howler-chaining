@@ -24,7 +24,7 @@ const listChain = [
 ];
 
 const listProxy = [
-  'state', 'playing'
+  'state', 'playing',
 ];
 
 function HowlChain(soundData, audioSpriteSoundKey, singletonKey) {
@@ -35,10 +35,10 @@ function HowlChain(soundData, audioSpriteSoundKey, singletonKey) {
 
 listChain.forEach((method) => {
   function proxy(...args) {
-    const id = this.id;
-    const forApply = [...args, id]
+    const { id } = this;
+    const forApply = [...args, id];
     if (id) {
-      this.howl[method].apply(this.howl, forApply);
+      this.howl[method](...forApply);
     }
     return this;
   }
@@ -47,16 +47,17 @@ listChain.forEach((method) => {
 
 listProxy.forEach((method) => {
   function proxy() {
-    const id = this.id;
+    const { id } = this;
     if (id) {
       return this.howl[method].call(this.howl, id);
     }
+    return undefined;
   }
   HowlChain.prototype[method] = proxy;
 });
 
 HowlChain.prototype.play = function play(force) {
-  const id = this.id;
+  const { id } = this;
   if (typeof id === 'undefined') {
     this.id = this.howl.play.call(this.howl, this.key);
     return this;
@@ -74,13 +75,12 @@ HowlChain.prototype.play = function play(force) {
 };
 
 HowlChain.prototype.loop = function loop(val) {
-  const id = this.id;
-  if (id) {
-    if (typeof val !== 'undefined') {
-      this.howl.loop.call(this.howl, val, this.id);
-      return this;
-    }
+  const { id } = this;
+  if (id && typeof val !== 'undefined') {
+    this.howl.loop.call(this.howl, val, this.id);
+    return this;
   }
+  return undefined;
 };
 
 HowlChain.prototype.Howl = Howl;
@@ -90,4 +90,4 @@ export {
   Howl,
   Howler,
   HowlChain,
-}
+};

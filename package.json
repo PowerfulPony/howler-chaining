@@ -1,6 +1,6 @@
 {
   "name": "howler-chaining",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Victor Zakharenko <victor@pony.ninja>",
   "license": "MIT",
   "keywords": [
@@ -24,11 +24,11 @@
     "lint": "eslint ./src --ext .js"
   },
   "devDependencies": {
-    "eslint": "^7.0.0",
-    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-sonarjs": "^0.5.0"
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-sonarjs": "^0.13.0"
   },
   "dependencies": {
     "howler": "2.x"
