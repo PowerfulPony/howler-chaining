@@ -1,6 +1,6 @@
 {
   "name": "howler-chaining",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Victor Zakharenko <victor@pony.ninja>",
   "license": "MIT",
   "keywords": [
@@ -18,17 +18,19 @@
   "bugs": {
     "url": "https://github.com/PowerfulPony/howler-chaining/issues"
   },
-  "homepage": "https://github.com/PowerfulPony/howler-chaining/issues#readme",
+  "homepage": "https://github.com/PowerfulPony/howler-chaining",
   "main": "src/index.js",
+  "files": [
+    "src/index.js"
+  ],
   "scripts": {
     "lint": "eslint ./src --ext .js"
   },
   "devDependencies": {
-    "eslint": "^8.19.0",
+    "eslint": "^8.31.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-sonarjs": "^0.13.0"
+    "eslint-plugin-sonarjs": "^0.17.0"
   },
   "dependencies": {
     "howler": "2.x"
